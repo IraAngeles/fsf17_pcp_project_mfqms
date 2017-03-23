@@ -7,8 +7,8 @@
 
     function MyService($http){
         var service = this;
-        const API_GET_PRODUCTS_ENDPOINT = "/api/products";
-        const API_GET_PRODUCTS_AFFECTED_URI = "/api/productsaffected";
+        const API_PRODUCTS_ENDPOINT = "/api/products";
+        const API_PRODUCTS_AFFECTED_URI = "/api/productsaffected";
 
         console.log("service");
 
@@ -17,6 +17,7 @@
         service.page5Svc = page5Svc;
         service.updateProductsAffected = updateProductsAffected;
         service.deleteProductsAffected = deleteProductsAffected;
+        service.createProductsAffected = createProductsAffected;
         
         function page1Svc(){
             console.log("service 1");
@@ -28,7 +29,7 @@
             console.log("service 4");
             return $http({
                     method: 'GET'
-                    , url: API_GET_PRODUCTS_AFFECTED_URI                
+                    , url: API_PRODUCTS_AFFECTED_URI                
 
             });
 
@@ -38,26 +39,27 @@
             console.log("service 5");
             return $http({
                     method: 'GET'
-                    , url: API_GET_PRODUCTS_ENDPOINT                
+                    , url: API_PRODUCTS_ENDPOINT                
 
             });
 
         }
 
-        // function createProductsAffected(){
-        //     return $http({
-        //             method: 'POST'
-        //             , url: 
-        //     });
+        function createProductsAffected(dataObject){
+            return $http({
+                    method: 'POST'
+                    , url: API_PRODUCTS_AFFECTED_URI
+                    , data: dataObject
+            });
 
 
-        // }
+        }
 
 
         function updateProductsAffected(dataObject){
             return $http({
                     method: 'PUT'
-                    , url: API_GET_PRODUCTS_AFFECTED_URI + "/" + dataObject.id
+                    , url: API_PRODUCTS_AFFECTED_URI + "/" + dataObject.id
                     , data: dataObject
             });
 
@@ -67,7 +69,7 @@
         function deleteProductsAffected(index){
             return $http({
                     method: 'DELETE'
-                    , url: API_GET_PRODUCTS_AFFECTED_URI + "/" + index
+                    , url: API_PRODUCTS_AFFECTED_URI + "/" + index
             });
 
         }

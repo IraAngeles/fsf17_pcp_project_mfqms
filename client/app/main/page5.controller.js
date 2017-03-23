@@ -14,8 +14,9 @@
         vm.header = "Select Products";
         vm.searchResults = [];
 
+
         vm.listProducts = listProducts;
-        vm.updateProduct = updateProduct;
+        vm.addProduct = addProduct;
 
         listProducts();
 
@@ -39,10 +40,22 @@
 
 
 
-        function updateProduct (index){
-            console.log ("index: " + index) ;           
+        function addProduct (object){
+            console.log ("index: " + JSON.stringify(object)) ;           
 
-
+            MyService
+                .createProductsAffected({
+                    part_number : object.part_number,
+                    part_number_code : object.part_number_code,
+                    model_type_number : object.model_type_number,
+                    fru_part_number : object.fru_part_number
+                })
+                .then(function(){
+                    console.log("created");
+                })
+                .catch(function(err){
+                    console.log(err);
+                })
         }
 
 
