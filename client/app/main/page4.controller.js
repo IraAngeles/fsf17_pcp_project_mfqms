@@ -73,7 +73,7 @@
                 .deleteProductsAffected(index)
                 .then(function(){
                     console.log("deleted");
-                    $state.go("page4");
+                    $state.reload();
                 })
                 .catch(function(err){
                     console.log(err);
