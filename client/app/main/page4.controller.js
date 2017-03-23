@@ -13,6 +13,35 @@
 
         vm.header = "Products Affected";
 
+        vm.searchResults = [];
+
+        vm.listProducts = listProducts;
+
+
+        listProducts();
+
+        function listProducts (){
+
+            console.log ("list products affected");
+
+            MyService
+                .page4Svc()
+                .then(function(result){
+                    vm.searchResults = result.data;
+                    console.log("page 5")
+                    console.log(JSON.stringify(result));
+                })
+                .catch(function(){
+                    console.log("error");
+                });
+
+
+        }
+
+
+
+
+
     }
 
 
