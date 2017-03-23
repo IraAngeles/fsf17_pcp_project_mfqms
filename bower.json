@@ -1,0 +1,22 @@
+{
+  "name": "fsf17_sequelize_ui_routing_template",
+  "description": "",
+  "main": "client/app.js",
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-messages": "^1.6.2",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "^1.6.2",
+    "angular-animate": "^1.6.2",
+    "angular-ui-router": "^0.4.2"
+  }
+}

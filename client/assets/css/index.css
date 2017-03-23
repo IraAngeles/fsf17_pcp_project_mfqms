@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+.jumbotron {
+  height: 150px;
+  color: white;
+  text-shadow: #444 0 1px 1px;
+  background:transparent;
+}
+
+.my-header {
+    font-family: 'Pacifico', cursive;
+}
+
+.pending-header {
+    background-color: mediumvioletred;
+}
+
+.strikeItem {
+  text-decoration: line-through;
+}
+
+@media (max-width: 768px) {
+  .navbar-form {
+    margin: 0 !important;
+    /* Avoid !important and use the custom CSS with higher priority */
+    padding-top: 7px !important;
+  }
+}
+
+#form-input {
+  color: darkgray;   
+  height: 35px;
+  padding: 0px 6px;
+}
+
+#form-btn {
+  height: 35px;
+  font-size: 16px;
+}
+
+button.navbar-btn{
+      margin-top:px;
+ } 
+
+ .form-control.ng-touched.ng-invalid {
+    border: thin solid #d9534f;
+}
+
+.form-control.ng-touched.ng-valid {
+    border: thin solid #419641;
+}
+
+.ng-submitted .form-control.ng-valid  {
+    border: thin solid #419641;
+
+}
+
+.ng-submitted .form-control.ng-invalid {
+    border: thin solid #d9534f;
+
+}
+
+.registration-page h1 {
+    text-align: center;
+    text-transform: uppercase;
+    border-top: thin solid #DDD;
+    border-bottom: thin solid #DDD;
+    padding: 20px 0;
+}
+
+.validation {
+    color: #d9534f;
+}
+
+.validation > div{
+    padding-top: 10px;
+}
+.validation .glyphicon {
+    margin-right: 5px;
+}
+
+.thank-you-page{
+    margin-top: 100px;
+}

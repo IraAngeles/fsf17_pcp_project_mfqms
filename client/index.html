@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/theme4.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+    <style>.active { color: red; font-weight: bold; }</style>    
+
+</head>
+<body>
+<!--<nav class="navbar navbar-default">
+    <div class="container-fluid">
+         Brand and toggle get grouped for better mobile display -->
+        <!--<div class="navbar-header">-->
+            <!-- Defines navigation bar button -->
+            <!--<button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IBM</a>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>-->
+
+        <!-- Collects nav links, forms, and other content for toggling -->
+        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a href="#!/page1"
+                       data-target="#page1"
+                       data-toggle="tab">
+                        Page 1
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!/page2"
+                       data-target="#page2"
+                       data-toggle="tab">
+                        Page 2
+                        <span class="sr-only">(search)</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div> /.navbar-collapse -->
+
+    <!--</div>-->
+    <!-- /.container-fluid -->
+
+
+<!--</nav>-->
+
+<!-- Tab panes -->
+<div class="container tab-content">
+    <!--<h1>Stop Ship Ticket</h1>-->
+    <ui-view></ui-view>
+</div>
+
+
+
+
+</body>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<script src="app/app.js"></script>
+<script src="app/app-route-config.js"></script>
+<script src="app/services/app.services.js"></script>
+
+<script src="app/main/page1.controller.js"></script>
+<script src="app/main/page2.controller.js"></script>
+<script src="app/main/page3.controller.js"></script>
+<script src="app/main/page4.controller.js"></script>
+<script src="app/main/page5.controller.js"></script>
+
+</html>
