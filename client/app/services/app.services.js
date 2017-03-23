@@ -42,14 +42,14 @@
 
         }
 
-        function createProductsAffected(){
-            return $http({
-                    method: 'POST'
-                    , url: 
-            });
+        // function createProductsAffected(){
+        //     return $http({
+        //             method: 'POST'
+        //             , url: 
+        //     });
 
 
-        }
+        // }
 
 
 
