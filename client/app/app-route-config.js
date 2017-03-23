@@ -37,7 +37,7 @@
                 controller : 'Page5Ctrl',
                 controllerAs : 'ctrl'
             })
-         $urlRouterProvider.otherwise("/page1");
+         $urlRouterProvider.otherwise("/page4");
     
     }
 

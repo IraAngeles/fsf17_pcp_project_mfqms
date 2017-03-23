@@ -12,40 +12,6 @@ const CLIENT_FOLDER = path.join(__dirname + '/../client');
 const MSG_FOLDER = path.join(CLIENT_FOLDER + '/assets/messages');
 
 
-// const MYSQL_USERNAME = 'root';
-// const MYSQL_PASSWORD = 'abcd1234';
-
-
-
-
-// var sequelize = new Sequelize(
-// 'employees',
-// MYSQL_USERNAME,
-// MYSQL_PASSWORD,
-// {
-//     host: 'localhost',         // default port    : 3306
-//     logging: console.log,
-//     dialect: 'mysql',
-//     pool: {
-//         max: 5,
-//         min: 0,
-//         idle: 10000
-//     }
-// }
-// );
-
-// Loads model for department table
-// var Department = require('./models/department')(sequelize, Sequelize);
-
-// sequelize
-//   .sync({ force: true })
-//   .then(function(err) {
-//     console.log('It worked!');
-//   }, function (err) { 
-//     console.log('An error occurred while creating the table:', err);
-//   });
-
-
 app.use(express.static(CLIENT_FOLDER));
 app.use(bodyParser.json());
 

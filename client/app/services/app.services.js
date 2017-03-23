@@ -15,7 +15,9 @@
         service.page1Svc = page1Svc;
         service.page4Svc = page4Svc;
         service.page5Svc = page5Svc;
-
+        service.updateProductsAffected = updateProductsAffected;
+        service.deleteProductsAffected = deleteProductsAffected;
+        
         function page1Svc(){
             console.log("service 1");
             return;
@@ -50,6 +52,25 @@
 
 
         // }
+
+
+        function updateProductsAffected(dataObject){
+            return $http({
+                    method: 'PUT'
+                    , url: API_GET_PRODUCTS_AFFECTED_URI + "/" + dataObject.id
+                    , data: dataObject
+            });
+
+        }
+
+
+        function deleteProductsAffected(index){
+            return $http({
+                    method: 'DELETE'
+                    , url: API_GET_PRODUCTS_AFFECTED_URI + "/" + index
+            });
+
+        }
 
 
 

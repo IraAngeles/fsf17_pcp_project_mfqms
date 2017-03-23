@@ -15,7 +15,7 @@
         vm.searchResults = [];
 
         vm.listProducts = listProducts;
-
+        vm.updateProduct = updateProduct;
 
         listProducts();
 
@@ -37,6 +37,13 @@
 
         }
 
+
+
+        function updateProduct (index){
+            console.log ("index: " + index) ;           
+
+
+        }
 
 
     }
