@@ -1,0 +1,109 @@
+<div class="container" ng-controller="RegisterCtrl as ctrl">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+          IBM
+        <!--<img alt="Brand" src="...">-->
+      </a>
+        <p class="navbar-text">{{ctrl.appname}}</p>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="col-sm-6 col-sm-offset-2">
+        <h3>Register</h3>
+        <hr>
+        <br>
+        <flash-message
+                duration="5000"
+                show-close="true"
+                on-dismiss="myCallback(flash);"
+        ></flash-message>
+
+        <!-- LOGIN FORM -->
+        <form name="registerForm" ng-submit="ctrl.register()" novalidate autocomplete="off">
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.emailAddress.$touched && registerForm.emailAddress.$invalid }">
+                <input type="email" class="form-control" ng-model="ctrl.emailAddress"
+                       name="emailAddress" placeholder="Email address" required>
+                <div class="help-block"
+                     ng-messages="registerForm.emailAddress.$error" ng-if="registerForm.emailAddress.$touched">
+                    <span class="help-inline" ng-message="required">Email Address is mandatory</span>
+                    <span class="help-inline" ng-message="email">Email Address is invalid</span>
+                </div>
+            </div>
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.firstName.$touched && registerForm.firstName.$invalid }">
+                <input type="text" class="form-control" ng-model="ctrl.firstName"
+                       name="firstName" placeholder="First Name" required>
+                <div class="help-block"
+                     ng-messages="registerForm.firstName.$error" ng-if="registerForm.firstName.$touched">
+                    <span class="help-inline" ng-message="required">First Name is mandatory</span>
+                </div>
+            </div>
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.lastName.$touched && registerForm.lastName.$invalid }">
+                <input type="text" class="form-control" ng-model="ctrl.lastName"
+                       name="lastName" placeholder="Last Name" required>
+                <div class="help-block"
+                     ng-messages="registerForm.lastName.$error" ng-if="registerForm.lastName.$touched">
+                    <span class="help-inline" ng-message="required">Last Name is mandatory</span>
+                </div>
+            </div>
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.password.$touched && registerForm.password.$invalid }">
+                <input type="password" class="form-control" ng-model="ctrl.password"
+                       name="password" placeholder="Password" 
+                       minlength="8" 
+                       ng-pattern ="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/"
+                       required>
+                <div class="help-block" 
+                    ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched">
+                    <span class="help-inline" ng-message="required">Password is mandatory.</span>
+                    <span class="help-inline" ng-message="minlength">Password must be at least 8 characters long.</span>
+                    <span class="help-inline" ng-message="pattern">Password must include a number, a special character (@, #, $), and both upper and lower cases.</span>
+                </div>
+            </div>
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.confirmpassword.$touched && registerForm.confirmpassword.$invalid }">
+                <input type="password" class="form-control" ng-model="ctrl.confirmpassword"
+                       name="confirmpassword" placeholder="Confirm Password" 
+                       compare-to="ctrl.password" 
+                       minlength="8" 
+                       ng-pattern ="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/"
+                       required>
+                <div class="help-block" 
+                    ng-messages="registerForm.confirmpassword.$error" ng-if="registerForm.confirmpassword.$touched">
+                    <span class="help-inline" ng-message="required">Confirm Password is mandatory.</span>
+                    <span class="help-inline" ng-message="compareTo">Confirm Passwords do not match</span>
+                    <span class="help-inline" ng-message="minlength">Confirm Password must be at least 8 characters long.</span>
+                    <span class="help-inline" ng-message="pattern">Confirm Password must include a number, a special character (@, #, $), and both upper and lower cases.</span>
+                </div>
+            </div>
+            <button type="submit" ng-disabled="registerForm.$invalid" class="btn btn-default btn-lg">SignUp</button>
+        </form>
+        <hr>
+        <p>
+            Already have an account? <a ui-sref="login">Sign-in</a>
+        </p>
+
+    </div>
+
+    <!--<div class="col-sm-4">
+        <div style="margin-top: 40px;">
+            <a href="/oauth/google" class="btn btn-block btn-social btn-google">
+                <i class="fa fa-google-plus" aria-hidden="true"></i> Google
+            </a>
+            <a href="/oauth/facebook" class="btn btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
+            </a>
+            <a href="/oauth/twitter" class="btn btn-block btn-social btn-twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i> Twitter
+            </a>
+            <a href="/oauth/linkedIn" class="btn btn-block btn-social btn-linkedin">
+                <i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="/oauth/wechat" class="btn btn-block btn-social btn-wechat">
+                <i class="fa fa-wechat" aria-hidden="true"></i> WeChat
+            </a>
+        </div>
+    </div>-->
+</div>

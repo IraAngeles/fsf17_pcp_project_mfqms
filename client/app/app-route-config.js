@@ -37,7 +37,21 @@
                 controller : 'Page5Ctrl',
                 controllerAs : 'ctrl'
             })
-         $urlRouterProvider.otherwise("/page4");
+            .state('login',{
+                url : '/login',
+                templateUrl: "pages/login.html",
+                controller : 'LoginCtrl',
+                controllerAs : 'ctrl'
+            })
+            .state('register',{
+                url : '/register',
+                templateUrl: "pages/register.html",
+                controller : 'RegisterCtrl',
+                controllerAs : 'ctrl'
+            })
+
+
+         $urlRouterProvider.otherwise("/login");
     
     }
 

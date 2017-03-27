@@ -1,0 +1,80 @@
+<div class="container" ng-controller="LoginCtrl as ctrl">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+          IBM
+        <!--<img alt="Brand" src="...">-->
+      </a>
+        <p class="navbar-text">{{ctrl.appname}}</p>
+    </div>
+  </div>
+</nav>
+
+    <div class="col-sm-6 col-sm-offset-2">
+        <h3>Login</h3>
+        <hr>
+        <br>
+        <flash-message
+                duration="5000"
+                show-close="true"
+                on-dismiss="myCallback(flash);"
+        ></flash-message>
+        <!-- LOGIN FORM -->
+        <form name="loginForm" ng-submit="ctrl.login()" novalidate autocomplete="off">
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
+                <input type="email" class="form-control" ng-model="ctrl.user.email"
+                       placeholder="Email address" name="email" required>
+                <div class="help-block"
+                     ng-messages="loginForm.email.$error" ng-if="loginForm.email.$touched">
+                    <span class="help-inline" ng-message="required">Email Address is mandatory</span>
+                    <span class="help-inline" ng-message="email">Email Address is invalid</span>
+                </div>
+            </div>
+            <div class="form-group input-field col s6" ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid}">
+                <input type="password" class="form-control" ng-model="ctrl.user.password"
+                       name="password" placeholder="Password" 
+                       minlength="8"
+                       ng-pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/"
+                       required>
+                <div class="help-block"
+                     ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
+                    <span class="help-inline" ng-message="required">Password is mandatory.</span>
+                    <span class="help-inline" ng-message="minlength">Password must be at least 8 characters long.</span>
+                    <span class="help-inline" ng-message="pattern">Password must include a number, a special character (@, #, $), and both upper and lower cases.</span>
+                </div>
+            </div>
+
+            <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-default btn-lg">Login</button>
+        </form>
+
+        <hr>
+
+        <p>Create an account with us, <a ui-sref="register">Sign-up</a></p>
+        <!--<p>Forgot your password ? <a ui-sref="ResetPassword">Reset</a></p>-->
+
+    </div>
+
+    <!--<div class="col-sm-4">
+
+        <div style="margin-top: 40px;">
+            <a href="/oauth/google" class="btn btn-block btn-social btn-google">
+                <i class="fa fa-google-plus" aria-hidden="true"></i> Google
+            </a>
+            <a href="/oauth/facebook" class="btn btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
+            </a>
+            <a href="/oauth/twitter" class="btn btn-block btn-social btn-twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i> Twitter
+            </a>
+            <a href="/oauth/linkedIn" class="btn btn-block btn-social btn-linkedin">
+                <i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn
+            </a>
+            <a href="/oauth/wechat" class="btn btn-block btn-social btn-wechat">
+                <i class="fa fa-wechat" aria-hidden="true"></i> WeChat
+            </a>
+        </div>
+    </div>-->
+
+</div>
