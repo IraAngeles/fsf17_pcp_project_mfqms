@@ -23,7 +23,15 @@ module.exports = function(sequelize, DataTypes) {
     role: {
       type: DataTypes.STRING(45),
       allowNull: false
-    }
+    },
+    status: {
+      type: DataTypes.STRING(45),
+      allowNull: false
+    },
+    approval_token: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    }         
   }, {
     tableName: 'users_profiles'
   });

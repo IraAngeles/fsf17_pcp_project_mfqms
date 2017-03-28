@@ -9,6 +9,7 @@
         var vm = this;
 
         vm.appname = "Manufacturing and Field Quality Management System";
+        vm.heading = "Register";
         
         console.log("Register Controller");
 

@@ -22,6 +22,7 @@ MYSQL_PASSWORD,
 
 // Loads model for department table
 var ProductsAffected = require('./models/products_affected')(database, Sequelize);
+var UsersProfiles = require('./models/users_profiles')(database, Sequelize);
 // // var Documents = require('./models/documents')(database, Sequelize);
 // database
 //   .sync({ force: true })
