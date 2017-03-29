@@ -49,9 +49,14 @@
                 controller : 'RegisterCtrl',
                 controllerAs : 'ctrl'
             })
+            .state('home',{
+                url : '/home',
+                templateUrl: "pages/home.html",
+                controller : 'HomeCtrl',
+                controllerAs : 'ctrl'
+            })
 
-
-         $urlRouterProvider.otherwise("/login");
+         $urlRouterProvider.otherwise("/home");
     
     }
 
