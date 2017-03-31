@@ -33,6 +33,6 @@ var UsersProfiles = require('./models/users_profiles')(database, Sequelize);
 //   });
 
 module.exports = {
-    ProductsAffected : ProductsAffected
-
+    ProductsAffected : ProductsAffected,
+    UsersProfiles : UsersProfiles
 };

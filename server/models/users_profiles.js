@@ -26,15 +26,15 @@ module.exports = function(sequelize, DataTypes) {
     },
     status: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     approval_token: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     reset_token: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     }             
   }, {
     tableName: 'users_profiles'

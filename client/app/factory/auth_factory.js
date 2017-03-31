@@ -8,6 +8,8 @@
         
     function AuthFactory ($q, $timeout, $http, Flash, $state) {
 
+        const API_REGISTER_URI = "/register";
+
        return ({
             register: register
 
@@ -22,7 +24,15 @@
 
             console.log("--->> " + JSON.stringify(data));
 
-            return deferred.promise;
+            // return deferred.promise;
+            return $http({
+                    method: 'POST',
+                    url: API_REGISTER_URI,
+                    data: data
+
+                });         
+
+
 
         }
 
