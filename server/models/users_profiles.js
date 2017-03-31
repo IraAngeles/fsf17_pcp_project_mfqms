@@ -8,19 +8,19 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
+    first_name: {
       type: DataTypes.STRING(255),
       allowNull: false
     },
+    last_name: {
+      type: DataTypes.STRING(45),
+      allowNull: false
+    },    
     email: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
-    brand: {
-      type: DataTypes.STRING(45),
-      allowNull: false
-    },
-    role: {
+    password: {
       type: DataTypes.STRING(45),
       allowNull: false
     },
@@ -31,8 +31,15 @@ module.exports = function(sequelize, DataTypes) {
     approval_token: {
       type: DataTypes.STRING(255),
       allowNull: false
-    }         
+    },
+    reset_token: {
+      type: DataTypes.STRING(255),
+      allowNull: false
+    }             
   }, {
     tableName: 'users_profiles'
+    ,timestamps: false
+    , freezeTableName: true
+    , sync : {force: true}      
   });
 };

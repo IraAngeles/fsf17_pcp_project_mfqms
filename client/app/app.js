@@ -1,4 +1,9 @@
 (function (){
     angular
-        .module('MyApp',['ui.router']);
+        .module("MyApp",[
+            "ui.router",
+            "ngFlash",
+            "ngSanitize",
+            "ngMessages"
+            ]);
 })();

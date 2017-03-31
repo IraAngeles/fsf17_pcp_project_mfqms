@@ -25,7 +25,7 @@
         <form name="loginForm" ng-submit="ctrl.login()" novalidate autocomplete="off">
             <div class="form-group input-field col s6" ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
                 <input type="email" class="form-control" ng-model="ctrl.user.email"
-                       placeholder="Email address" name="email" required>
+                       placeholder="internet address @ IBM.com" name="email" required>
                 <div class="help-block"
                      ng-messages="loginForm.email.$error" ng-if="loginForm.email.$touched">
                     <span class="help-inline" ng-message="required">Email Address is mandatory</span>

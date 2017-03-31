@@ -1,4 +1,4 @@
-<div>
+<div>  
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,33 +25,42 @@
         <!-- Collects nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <p class="navbar-text">{{ctrl.header}}</p>
-                    <!--<a>{{ctrl.header}}</a>-->
-                    <!--<a href="#!/page2"
-                       data-target="#page2"
-                       data-toggle="tab">-->
-                        
-                        <!--<span class="sr-only"></span>-->
-                    <!--</a>-->
+                <li>
+                     <p class="navbar-text">{{ctrl.header}}</p>
                 </li>
                 <li class="nav-item">
-                    <a href="#!/page4"
-                       data-target="#page4"
+                    <a href="#!/page2"
+                       data-target="#page2"
                        data-toggle="tab">
                         Back
                         <span class="sr-only"></span>
                     </a>
                 </li>
-                <!--<li class="nav-item">
+                <li class="nav-item">
+                    <a href="#!/page2"
+                       data-target="#page2"
+                       data-toggle="tab">
+                        Summary / Status
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="#!/page3"
                        data-target="#page3"
                        data-toggle="tab">
-                       Select Products
+                        Owners / Contacts
                         <span class="sr-only"></span>
                     </a>
-                </li>-->
-
+                </li>
+                <li class="nav-item">
+                    <a href="#!/page4"
+                       data-target="#page4"
+                       data-toggle="tab">
+                        Products Affected
+                        <span class="sr-only"></span>
+                    </a>
+                </li>                
+            </ul>
 
         </div> 
         <!--/.navbar-collapse -->
@@ -61,41 +70,34 @@
 
 </nav>
 
-    <!--<h3>Page 4</h3>-->
-    <!--<h1>{{ctrl.header}}</h1>-->
+
+    <h1>{{ctrl.header}}</h1>
 
 
-    <table class="table">
-        <thead> 
-            <td>Part Number</td>
-            <td>Code Name</td>
-            <td>Commidity</td>
-            <td>Brand / Model-Type-Number / Code</td>
-            <td>FRU P/N</td>                        
-        </thead>
+    <!--<form action="" ng-submit="ctrl.page1Submit()">
 
-        <tbody>
-            <tr ng-repeat="i in ctrl.searchResults" >
-                <td>{{i.part_number}}</td>
-                <td>{{i.part_number_code}}</td>
-                <td>{{i.commodity}}</td>
-                <td>{{i.model_type_number}}</td>
-                <td>{{i.fru_part_number}}</td>
-                <td>
-                    <div align="right">
-                    <button  ng-hide="editMode" type="button" class="btn btn-success" ng-click="ctrl.addProduct(i)" >
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                    </button>
-                </div>                     
-                </td>
+        
+        <button type="button" class="btn btn-success">Submit</button>
 
-            </tr>
+    </form>-->
 
 
-        </tbody>
+        <!--<ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Summary / Status</a></li>
+            <li role="presentation"><a href="#">Owners / Contacts</a></li>
+            <li role="presentation"><a href="#page3">Products Affected</a></li>
+        </ul>-->
 
-    </table>
+    <ui-view></ui-view>
+<!--<div class="tab-content">
+    <div id="page3" >
+        <div ng=include="pages/page3.html"></div>
+
+    </div>
+
+</div>-->
 
 
+    <h3>{{ctrl.message}}</h3>
 
 </div>

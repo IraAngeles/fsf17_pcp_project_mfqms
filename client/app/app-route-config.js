@@ -19,6 +19,12 @@
                 controller : 'Page2Ctrl',
                 controllerAs : 'ctrl'
             })
+            .state('summary',{
+                url : '/summary',
+                templateUrl: "pages/summary.html",
+                controller : 'SummaryCtrl',
+                controllerAs : 'ctrl'
+            })            
             .state('page3',{
                 url : '/page3',
                 templateUrl: "pages/page3.html",

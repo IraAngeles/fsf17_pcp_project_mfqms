@@ -11,7 +11,8 @@
 
         console.log("Page 2 Controller");
 
-        vm.header = "Page 2";
+        // vm.navheader = "Stop Ship";
+        vm.header = "Document details";
 
     }
 
