@@ -16,8 +16,6 @@
        });
 
         
-
-
         function register(data){
 
             var deferred = $q.defer();

@@ -18,3 +18,13 @@ exports.register = function (req, res){
 
 
 };
+
+
+// exports.login = function(req, res){
+//     console.log("login ->>>> ");
+//     console.log(JSON.stringify(req.body));
+
+
+
+
+// };
