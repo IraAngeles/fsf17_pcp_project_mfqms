@@ -7,17 +7,36 @@
 
     function myAppConfig($stateProvider,$urlRouterProvider){
         $stateProvider
+            .state('login',{
+                url : '/login',
+                templateUrl: "pages/login.html",
+                controller : 'LoginCtrl',
+                controllerAs : 'ctrl'
+            })
+            .state('register',{
+                url : '/register',
+                templateUrl: "pages/register.html",
+                controller : 'RegisterCtrl',
+                controllerAs : 'ctrl'
+            })
             .state('page1',{
                 url : '/page1',
                 templateUrl: "pages/page1.html",
                 controller : 'Page1Ctrl',
                 controllerAs : 'ctrl'
             })
-            .state('page2',{
-                url : '/page2',
-                templateUrl: "pages/page2.html",
-                controller : 'Page2Ctrl',
-                controllerAs : 'ctrl'
+            .state("page2", {
+                url: "/page2",
+                templateUrl:  "pages/page2.html",
+                // resolve: {
+                //     authenticated: function (AuthFactory) {
+                //         console.log("authenticated ?");
+                //         console.log(AuthFactory.isLoggedIn());
+                //         return AuthFactory.isLoggedIn();
+                //     }
+                // },
+                controller: 'Page2Ctrl',
+                controllerAs: 'ctrl'
             })
             .state('summary',{
                 url : '/summary',
@@ -43,26 +62,30 @@
                 controller : 'Page5Ctrl',
                 controllerAs : 'ctrl'
             })
-            .state('login',{
-                url : '/login',
-                templateUrl: "pages/login.html",
-                controller : 'LoginCtrl',
-                controllerAs : 'ctrl'
-            })
-            .state('register',{
-                url : '/register',
-                templateUrl: "pages/register.html",
-                controller : 'RegisterCtrl',
-                controllerAs : 'ctrl'
-            })
-            .state('home',{
-                url : '/home',
-                templateUrl: "pages/home.html",
-                controller : 'HomeCtrl',
-                controllerAs : 'ctrl'
+            .state("home", {
+                url: "/home",
+                templateUrl:  "pages/home.html",
+                access : { restricted: false},
+                // resolve: {
+                //     authenticated: function (AuthFactory) {
+                //         console.log("authenticated ?");
+                //         console.log(AuthFactory.isLoggedIn());
+                //         return AuthFactory.isLoggedIn();
+                //     }
+                // },
+                controller: 'HomeCtrl',
+                controllerAs: 'ctrl'
             })
 
-         $urlRouterProvider.otherwise("/home");
+
+            // .state('home',{
+            //     url : '/home',
+            //     templateUrl: "pages/home.html",
+            //     controller : 'HomeCtrl',
+            //     controllerAs : 'ctrl'
+            // })
+
+         $urlRouterProvider.otherwise("/login");
     
     }
 

@@ -42,12 +42,12 @@ require("./routes")(app, passport);
 
 app.use('/bower_components', express.static( path.join(__dirname,'/../bower_components')));
 
-app.use(express.static(path.join(__dirname,"/../client")));
 
 
-app.use(function (req, res) {
-    res.status(404).sendFile(path.join(MSG_FOLDER + "/404.html"));
-});
+
+// app.use(function (req, res) {
+//     res.status(404).sendFile(path.join(MSG_FOLDER + "/404.html"));
+// });
 
 // app.use(function (err, req, res, next) {
 //     res.status(501).sendFile(path.join(MSG_FOLDER + '/501.html'));
