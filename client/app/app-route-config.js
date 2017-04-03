@@ -76,7 +76,12 @@
                 controller: 'HomeCtrl',
                 controllerAs: 'ctrl'
             })
-
+            .state('userprofile',{
+                url : '/userprofile',
+                templateUrl: "pages/user_profile.html",
+                controller : 'UserProfileCtrl',
+                controllerAs : 'ctrl'
+            })
 
             // .state('home',{
             //     url : '/home',

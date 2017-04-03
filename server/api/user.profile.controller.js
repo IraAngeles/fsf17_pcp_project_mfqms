@@ -20,9 +20,18 @@ exports.register = function (req, res){
 };
 
 
-// exports.login = function(req, res){
-//     console.log("login ->>>> ");
-//     console.log(JSON.stringify(req.body));
+exports.getprofiles = function (req, res){
+
+    UsersProfiles
+        .findAll()
+        .then(function(result){
+            res.status(200).json(result);
+        })
+        .catch(function(err){
+            res.status(500).json(err);
+        });
+
+}
 
 
 

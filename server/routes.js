@@ -9,7 +9,8 @@ var path = require("path");
 
 const API_PRODUCTS_URI = "/api/products";
 const API_PRODUCTS_AFFECTED_URI = "/api/productsaffected";
-const API_REGISTER_URI = "/register";
+const API_USER_PROFILES_URI = "/api/userprofiles";
+// const API_REGISTER_URI = "/register";
 const API_LOGIN_URI = "/login"; 
 const API_LOGOUT_URI = "/logout";
 const HOME_PAGE = "/#!/home";
@@ -21,32 +22,29 @@ module.exports = function(app,passport) {
 // will use
 app.get (API_PRODUCTS_URI, ProductsController.getProducts);
 
+//  API - Products affected 
 
 app.post (API_PRODUCTS_AFFECTED_URI, ProductsAffectedController.createProductsAffected);
 app.get (API_PRODUCTS_AFFECTED_URI, ProductsAffectedController.getProductsAffected);
 app.put (API_PRODUCTS_AFFECTED_URI + "/:id", ProductsAffectedController.updateProductsAffected);
 app.delete (API_PRODUCTS_AFFECTED_URI + "/:id", ProductsAffectedController.deleteProductsAffected);
 
-app.post(API_REGISTER_URI, UserProfileController.register );
+// END
+
+// API - User Profile 
+
+app.post(API_USER_PROFILES_URI, UserProfileController.register );
+app.get(API_USER_PROFILES_URI, UserProfileController.getprofiles );
+
+
 
 app.use(express.static(path.join(__dirname,"/../client")));
-
-// app.post(API_LOGIN_URI, passport.authenticate("local", {
-//     successRedirect: HOME_PAGE,
-//     failureRedirect: SIGNIN_PAGE,
-//     failureFlash : true
-// }));
-
-// app.post(API_LOGIN_URI, passport.authenticate("local"));
 
 app.post(API_LOGIN_URI, passport.authenticate("local"),
  function(req, res){
     res.status(200).json("Login successfull!");
 
  });
-
-
-// app.post(API_LOGIN_URI, UserProfileController.authenticate);
 
 app.get("/status/user", function (req, res) {
     var status = "";

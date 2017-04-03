@@ -9,16 +9,21 @@
         var service = this;
         const API_PRODUCTS_ENDPOINT = "/api/products";
         const API_PRODUCTS_AFFECTED_URI = "/api/productsaffected";
+        const API_USER_PROFILES_URI = "/api/userprofiles";
 
         console.log("service");
 
         service.page1Svc = page1Svc;
         service.page4Svc = page4Svc;
         service.page5Svc = page5Svc;
+
         service.updateProductsAffected = updateProductsAffected;
         service.deleteProductsAffected = deleteProductsAffected;
         service.createProductsAffected = createProductsAffected;
-        
+
+        service.getUserProfiles = getUserProfiles;
+
+
         function page1Svc(){
             console.log("service 1");
             return;
@@ -44,6 +49,9 @@
             });
 
         }
+
+
+// Products Affected
 
         function createProductsAffected(dataObject){
             return $http({
@@ -75,6 +83,22 @@
         }
 
 
+
+// User Profiles   
+
+        function getUserProfiles(){
+            return $http({
+                method: "GET"
+                , url: API_USER_PROFILES_URI
+            });
+
+
+
+
+
+
+
+        }
 
     }
 

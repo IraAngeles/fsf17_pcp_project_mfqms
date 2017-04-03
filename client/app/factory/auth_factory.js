@@ -8,7 +8,7 @@
         
     function AuthFactory ($q, $timeout, $http, Flash, $state) {
 
-        const API_REGISTER_URI = "/register";
+        const API_USER_PROFILES_URI = "/api/userprofiles";
         const API_LOGIN_URI = "/login"; 
         var user = null;
 
@@ -75,7 +75,7 @@
             // return deferred.promise;
             return $http({
                     method: 'POST',
-                    url: API_REGISTER_URI,
+                    url: API_USER_PROFILES_URI,
                     data: data
 
                 });         
