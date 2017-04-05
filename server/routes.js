@@ -35,7 +35,8 @@ app.delete (API_PRODUCTS_AFFECTED_URI + "/:id", ProductsAffectedController.delet
 
 app.post(API_USER_PROFILES_URI, UserProfileController.register );
 app.get(API_USER_PROFILES_URI, UserProfileController.getprofiles );
-
+app.put(API_USER_PROFILES_URI  + "/:id", UserProfileController.updateprofiles );
+app.delete(API_USER_PROFILES_URI  + "/:id", UserProfileController.deleteprofiles );
 
 
 app.use(express.static(path.join(__dirname,"/../client")));

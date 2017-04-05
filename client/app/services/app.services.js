@@ -22,7 +22,8 @@
         service.createProductsAffected = createProductsAffected;
 
         service.getUserProfiles = getUserProfiles;
-
+        service.updateUserProfiles = updateUserProfiles;
+        service.deleteUserProfiles = deleteUserProfiles;
 
         function page1Svc(){
             console.log("service 1");
@@ -91,14 +92,27 @@
                 method: "GET"
                 , url: API_USER_PROFILES_URI
             });
-
-
-
-
-
-
-
         }
+
+        function updateUserProfiles(dataObject){
+            return $http({
+                method: "PUT"
+                , url: API_USER_PROFILES_URI + "/" + dataObject.id
+                , data: dataObject
+            });
+        }
+
+        function deleteUserProfiles(index){
+            return $http({
+                method: "DELETE"
+                , url: API_USER_PROFILES_URI + "/" + index
+            });
+        }
+
+
+
+
+
 
     }
 

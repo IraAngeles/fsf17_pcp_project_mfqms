@@ -33,7 +33,48 @@ exports.getprofiles = function (req, res){
 
 }
 
+exports.updateprofiles = function (req, res){
+    console.log(req.params.id);
+    console.log(req.body);
+
+    var whereclause = { id : req.params.id }
+    UsersProfiles
+        .update(req.body, {where: whereclause} )
+        .then(function(result){
+            res.status(200).json(result);
+        })
+        .catch(function(err){
+            res.status(500).json(err);
+        });
+
+}
+
+exports.deleteprofiles = function (req,res){
+    console.log(req.params.id);
+    console.log(req.body);
+
+    var whereclause = { id : req.params.id }
+    UsersProfiles
+        .findOne({where: whereclause} )
+        .then(function(result){
+
+            console.log(JSON.stringify(result));
 
 
+            var whereclause = { id : result.id }
+            UsersProfiles
+                .update( {status: "Revoke" }, {where: whereclause} )
+                .then(function(result){
+                    console.log("deleted");
+                    res.status(200).json(result);
+                })
+                .catch(function(err){
+                    res.status(500).json(err);
+                });
+        })
+        .catch(function(err){
+            res.status(500).json(err);
+        });
 
-// };
+
+}
