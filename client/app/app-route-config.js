@@ -66,13 +66,13 @@
                 url: "/home",
                 templateUrl:  "pages/home.html",
                 access : { restricted: false},
-                // resolve: {
-                //     authenticated: function (AuthFactory) {
-                //         console.log("authenticated ?");
-                //         console.log(AuthFactory.isLoggedIn());
-                //         return AuthFactory.isLoggedIn();
-                //     }
-                // },
+                resolve: {
+                    authenticated: function (AuthFactory) {
+                        console.log("authenticated ?");
+                        console.log(AuthFactory.isLoggedIn());
+                        return AuthFactory.isLoggedIn();
+                    }
+                },
                 controller: 'HomeCtrl',
                 controllerAs: 'ctrl'
             })

@@ -59,6 +59,7 @@ app.get("/status/user", function (req, res) {
 });
 
 app.get("/logout", function(req, res) {
+    console.log('logout');
     req.logout();             // clears the passport session
     req.session.destroy();    // destroys all session related data
     res.send(req.user).end();

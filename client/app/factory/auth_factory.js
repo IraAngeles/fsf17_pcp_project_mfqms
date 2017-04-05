@@ -18,7 +18,7 @@
             register: register,
             login : login,
             getUserStatus : getUserStatus,
-            logout : logout
+            logoutApp : logoutApp
        });
 
         // function isLoggedIn() {
@@ -118,7 +118,7 @@
 
 
 
-        function logout() {
+        function logoutApp() {
 
             // create a new instance of deferred
             var deferred = $q.defer();
