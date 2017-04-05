@@ -11,73 +11,83 @@
                 url : '/login',
                 templateUrl: "pages/login.html",
                 controller : 'LoginCtrl',
-                controllerAs : 'ctrl',
-                access: {restricted: false}
+                controllerAs : 'ctrl'
             })
             .state('register',{
                 url : '/register',
                 templateUrl: "pages/register.html",
                 controller : 'RegisterCtrl',
-                controllerAs : 'ctrl',
-                access: {restricted: false}
+                controllerAs : 'ctrl'
             })
             .state('page1',{
                 url : '/page1',
                 templateUrl: "pages/page1.html",
                 controller : 'Page1Ctrl',
-                controllerAs : 'ctrl',
-                access: {restricted: false}
+                controllerAs : 'ctrl'
             })
             .state("page2", {
                 url: "/page2",
                 templateUrl:  "pages/page2.html",
+                // resolve: {
+                //     authenticated: function (AuthFactory) {
+                //         console.log("authenticated ?");
+                //         console.log(AuthFactory.isLoggedIn());
+                //         return AuthFactory.isLoggedIn();
+                //     }
+                // },
                 controller: 'Page2Ctrl',
-                controllerAs: 'ctrl',
-                access: {restricted: true}
+                controllerAs: 'ctrl'
             })
             .state('summary',{
                 url : '/summary',
                 templateUrl: "pages/summary.html",
                 controller : 'SummaryCtrl',
-                controllerAs : 'ctrl',
-                access: {restricted: true}
+                controllerAs : 'ctrl'
             })            
             .state('page3',{
                 url : '/page3',
                 templateUrl: "pages/page3.html",
                 controller : 'Page3Ctrl',
-                controllerAs : 'ctrl',
-                access: {restricted: true}
+                controllerAs : 'ctrl'
             })
             .state('page4',{
                 url : '/page4',
                 templateUrl: "pages/page4.html",
                 controller : 'Page4Ctrl',
-                controllerAs : 'ctrl',
-                access: {restricted: true}
+                controllerAs : 'ctrl'
             })
             .state('page5',{
                 url : '/page5',
                 templateUrl: "pages/page5.html",
                 controller : 'Page5Ctrl',
-                controllerAs : 'ctrl',
-                access: {restricted: true}
+                controllerAs : 'ctrl'
             })
             .state("home", {
                 url: "/home",
                 templateUrl:  "pages/home.html",
+                // resolve: {
+                //     authenticated : function (AuthFactory) {
+                //         console.log("authenticated ?");
+                //         console.log(AuthFactory.isLoggedIn());
+                //         return AuthFactory.isLoggedIn();
+                //     }
+                // },
                 controller: 'HomeCtrl',
-                controllerAs: 'ctrl',
-                access: {restricted: true}
+                controllerAs: 'ctrl'
             })
             .state('userprofile',{
                 url : '/userprofile',
                 templateUrl: "pages/user_profile.html",
                 controller : 'UserProfileCtrl',
-                controllerAs : 'ctrl',
-                access: {restricted: true}
+                controllerAs : 'ctrl'
             })
 
+            // .state('home',{
+            //     url : '/home',
+            //     templateUrl: "pages/home.html",
+            //     controller : 'HomeCtrl',
+            //     controllerAs : 'ctrl'
+            // })
 
          $urlRouterProvider.otherwise("/login");
     
@@ -85,37 +95,5 @@
 
 })();   
 
-(function(){
 
-    angular
-        .module("MyApp")
-        .run(registerEventHandler);
-
-    registerEventHandler.$inject = ['$rootScope', '$state', 'AuthFactory'];  
-
-
-    function registerEventHandler($rootScope,$state,AuthFactory ){
-
-        $rootScope.$on('$stateChangeStart', 
-            function (event, next, current) {
-
-                AuthFactory
-                    .getUserStatus( function(user){
-                        console.log(JSON.stringify(user));
-                        if(user.status == 200){
-                            if (next.access.restricted && !AuthFactory.isLoggedIn()){
-                                // $location.path('/login');
-                                $state.go('login');
-                            }
-                        }
-                    })
-
-
-        });
-
-    }
-
-
-
-})();
 

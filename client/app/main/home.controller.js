@@ -12,24 +12,24 @@
         vm.logout = logout;
 
         console.log("Home Controller");
-
+        // console.log(authenticated);
 
         function logout(){
             console.log("logout");
-            // var deferred = $q.defer();
+            var deferred = $q.defer();
 
             AuthFactory
                 .logoutApp()
                 .then(function(){
-                    // deferred.resolve();
+                    deferred.resolve();
                     $state.go("login");
                 })
                 .catch(function(){
                     console.log("error");
-                    // $state.reload();
+                    $state.reload();
                 });
 
-            // return deferred.promise;
+            return deferred.promise;
 
  
         }

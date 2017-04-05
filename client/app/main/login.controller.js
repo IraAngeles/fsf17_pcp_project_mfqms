@@ -53,7 +53,7 @@
 
                 })
                 .catch (function(error){
-                    // console.log("Login error -- " + JSON.stringify(error));
+                    console.log("Login error -- " + JSON.stringify(error));
                 });
 
 

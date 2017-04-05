@@ -57,10 +57,10 @@
                     console.log("get user ->>> " + authResult);
                     if(data["data"] != ''){
                         user = true;
-                        callback(user);
+                        callback(data);
                     } else {
                         user = false;
-                        callback(user);
+                        callback(data);
                     }
                 });
         }
@@ -99,14 +99,21 @@
                 .then(function (data) {
                     var status = data.status;
                     if(status == 200){
+                        console.log("redirect to home");
                         user = true;
                         deferred.resolve();
+                        $state.go("home");
+                    }else{
+                        deferred.reject();
+                        $state.go("login");
                     }
                 })
                 // handle error
                 .catch(function (data) {
+                    console.log("error");
                     user = false;
                     deferred.reject();
+
                 });
 
             // return promise object
