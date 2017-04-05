@@ -42,7 +42,9 @@ module.exports = function(sequelize, DataTypes) {
     }             
   }, {
     tableName: 'users_profiles'
-    ,timestamps: false
+    ,timestamps: true
+    ,createdAt: 'created_at'
+    ,updatedAt: 'updated_at'    
     , freezeTableName: true
     , sync : {force: true}      
   });
