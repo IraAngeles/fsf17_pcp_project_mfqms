@@ -43,7 +43,7 @@ Documents.hasMany(Transactions, {foreignKey: 'ss_document_id'});
 Transactions.belongsTo(Documents, {foreignKey: 'ss_document_id'});
 
 database
-  .sync({ force: false })
+  .sync({ force: config.seed })
   .then(function(err) {
     require("./dummydata");
     insertData(UsersProfiles, Documents, ProductsAffected, Owners, Summaries, Attachments, Transactions);
