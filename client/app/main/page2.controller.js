@@ -1,21 +1,31 @@
 (function(){
 
-    angular
-        .module("MyApp")
-        .controller("Page2Ctrl",Page2Ctrl);
+  angular
+    .module("MyApp")
+    .controller("Page2Ctrl",Page2Ctrl);
 
-    Page2Ctrl.$inject = ['$window','MyService'];
+  Page2Ctrl.$inject = ['$window', '$state', '$stateParams', 'GetDocDetailsService'];
 
-    function Page2Ctrl ($window,MyService){
-        var vm = this;
+  function Page2Ctrl ($window, $state, $stateParams, GetDocDetailsService){
+    var vm = this;
+    vm.singleDoc = "";
+    console.log("Page 2 Controller");
+    console.log($stateParams.id)
 
-        console.log("Page 2 Controller");
+      // vm.navheader = "Stop Ship";
+    vm.header = "Document details";
 
-        // vm.navheader = "Stop Ship";
-        vm.header = "Document details";
+    GetDocDetailsService
+      .getdocDetails($stateParams.id)
+      .then(function (result) {
+          // console.log("result " + JSON.stringify(result));
+          vm.singleDoc = result[0];
+          console.log(vm.singleDoc);
+      })
+      .catch(function (err) {
+          console.log("error " + JSON.stringify(err));
+      });
 
-    }
-
-
+  }
 
 })();

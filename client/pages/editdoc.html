@@ -1,0 +1,249 @@
+<div>   
+  <!--<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">-->
+
+    <!--<h3>Page 3</h3>
+    <h1>{{ctrl.header}}</h1>-->
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!-- Defines navigation bar button -->
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IBM</a>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" ng-model="ctrl.searchFilter">
+            </div>
+            <!--<button type="submit" class="btn btn-default">Submit</button>-->
+        </form>
+
+        <!-- Collects nav links, forms, and other content for toggling -->
+        <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a href="#!/page1"
+                       data-target="#page1"
+                       data-toggle="tab">
+                        Page 1
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!/page2"
+                       data-target="#page2"
+                       data-toggle="tab">
+                        Page 2
+                        <span class="sr-only">(search)</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div> /.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+
+
+</nav>
+
+
+  <h2>Editing {{ctrl.singleDoc.document_number}} ...</h2>
+
+  <div class="container-fluid">
+    <div>
+      <form name="updateForm" ng-submit="updateForm.$valid && ctrl.updateDoc();" novalidate="">
+
+        <div class="form-group"> 
+          <label for="title">Title</label>
+            <input id="title"
+                    class="form-control"
+                    name="title"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.title"/> 
+            <div class="validation"  data-ng-show="updateForm.title.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.title.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Title is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="owner">Owner</label>
+            <input id="owner"
+                    class="form-control"
+                    name="owner"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.owner"/> 
+            <div class="validation"  data-ng-show="updateForm.owner.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.owner.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Owner is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="status">Status</label>
+            <input id="status"
+                    class="form-control"
+                    name="status"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.status"/> 
+            <div class="validation"  data-ng-show="updateForm.status.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.status.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Status is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="problem_description">Problem Description</label>
+            <input id="problem_description"
+                    class="form-control"
+                    name="problem_description"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.problem_description"/> 
+            <div class="validation"  data-ng-show="updateForm.problem_description.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.problem_description.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Problem Description is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="problem_status">Problem Status</label>
+            <input id="problem_status"
+                    class="form-control"
+                    name="problem_status"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.problem_status"/> 
+            <div class="validation"  data-ng-show="updateForm.problem_status.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.problem_status.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Problem Status is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="attr">Attribute</label>
+            <input id="attr"
+                    class="form-control"
+                    name="attr"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.attr"/> 
+            <div class="validation"  data-ng-show="updateForm.attr.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.attr.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Attribute is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="brand">Brand</label>
+            <input id="brand"
+                    class="form-control"
+                    name="brand"
+                    type="text"
+                    required
+                    ng-model="ctrl.singleDoc.brand"/> 
+            <div class="validation"  data-ng-show="updateForm.brand.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.brand.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Brand is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="field_impact">Field Impact</label>
+            <input id="field_impact"
+                    class="form-control"
+                    name="field_impact"
+                    type="number"
+                    required
+                    ng-model="ctrl.singleDoc.field_impact"/> 
+            <div class="validation"  data-ng-show="updateForm.field_impact.$touched || updateForm.$submitted">
+                <div data-ng-show="updateForm.field_impact.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Field Impact is required and must be numeric.
+                </div>
+            </div>       
+        </div>
+
+        <button type="submit" class="btn btn-success">Save</button>
+        <button type="button" class="btn btn-default" ng-click="ctrl.cancel();">Cancel</button>
+        <button type="button" class="btn btn-danger" ng-click="ctrl.remove();">Delete</button>
+
+      </form>
+    </div>
+  </div>
+
+
+ <!--tabs-->
+<!--<div ng-cloak>
+  <md-content>
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="Summary/Status">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Summary/Status</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="other">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Other Data</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
+          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Field Actions">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Field Actions</h1>
+          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Owners/Contacts">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Owners/Contacts</h1>
+          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="Product Affected">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Product Affected</h1>
+          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+      </md-tab>
+      <md-tab label="History">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">History</h1>
+          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+</div>-->
+
+
+</div>

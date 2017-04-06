@@ -10,31 +10,34 @@ module.exports = function(sequelize, DataTypes) {
     },
     closed_at: {
       type: DataTypes.DATE,
-      allowNull: false
+      allowNull: true
     },
     updated_at: {
       type: DataTypes.DATE,
       allowNull: true
     },
     created_at: {
-      type: DataTypes.DATE,
+      // type: DataTypes.DATE,
+      // allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
       allowNull: false
     },
     title: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     owner: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     status: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },   
     document_number: {
       type: DataTypes.STRING(45),
-      allowNull: false
+      allowNull: true
     },
     problem_description: {
       type: DataTypes.STRING(45),
@@ -44,7 +47,8 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING(45),
       allowNull: true
     },
-    attributes: {
+    // attributes: {
+    attr: {
       type: DataTypes.STRING(45),
       allowNull: true
     },
@@ -75,5 +79,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'documents'
+    , timestamps: false
+    , freezeTableName: true
   });
 };

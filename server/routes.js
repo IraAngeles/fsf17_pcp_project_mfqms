@@ -1,6 +1,9 @@
 var ProductsController = require("./api/products.controller.js");
 var ProductsAffectedController = require("./api/products.affected.controller.js");
 var UserProfileController  = require("./api/user.profile.controller.js");
+var DocumentsController  = require("./api/documents.controller.js");
+var UpdateDocController  = require("./api/update.documents.controller.js")
+var SoftDeleteDocController  = require("./api/softdelete.document.controller.js")
 
 var express = require("express");
 var path = require("path");
@@ -15,6 +18,13 @@ const API_LOGIN_URI = "/login";
 const API_LOGOUT_URI = "/logout";
 const HOME_PAGE = "/#!/home";
 const SIGNIN_PAGE = "/#!/login";
+
+const API_DOCUMENTS_URI = '/api/documents';
+const API_DOCUMENTSDETAILS_URI = '/api/documentsdetails';
+const API_CREATEDOC_URI = '/api/createdoc';
+const API_UPDATEDOC_URI = '/api/updatedoc';
+const API_SOFTDELETEDOC_URI = '/api/softdeletedoc';
+
 
 module.exports = function(app,passport) {
 
@@ -64,6 +74,13 @@ app.get("/logout", function(req, res) {
     req.session.destroy();    // destroys all session related data
     res.send(req.user).end();
 });
+
+
+app.get(API_DOCUMENTS_URI, DocumentsController.getDocuments);
+app.get(API_DOCUMENTSDETAILS_URI, DocumentsController.getdocumentsDetails);
+app.post(API_CREATEDOC_URI, DocumentsController.createDoc);
+app.put(API_UPDATEDOC_URI, UpdateDocController.updateDoc);
+app.put(API_SOFTDELETEDOC_URI, SoftDeleteDocController.softdeleteDoc);
 
 
 // app.get('/home', isAuthenticated, function(req, res) {

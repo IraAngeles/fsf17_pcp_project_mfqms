@@ -26,14 +26,15 @@
                 templateUrl: "pages/page1.html",
                 controller : 'Page1Ctrl',
                 controllerAs : 'ctrl',
-                access: {restricted: false}
+                access: {restricted: true}
             })
             .state("page2", {
                 url: "/page2",
                 templateUrl:  "pages/page2.html",
                 controller: 'Page2Ctrl',
                 controllerAs: 'ctrl',
-                access: {restricted: true}
+                access: {restricted: true},
+                params: {id: null}
             })
             .state('summary',{
                 url : '/summary',
@@ -47,7 +48,8 @@
                 templateUrl: "pages/page3.html",
                 controller : 'Page3Ctrl',
                 controllerAs : 'ctrl',
-                access: {restricted: true}
+                access: {restricted: true},
+                params: {id: null}
             })
             .state('page4',{
                 url : '/page4',
@@ -76,6 +78,13 @@
                 controller : 'UserProfileCtrl',
                 controllerAs : 'ctrl',
                 access: {restricted: true}
+            })
+            .state('editdoc',{
+                url : '/editdoc',
+                templateUrl: "pages/editdoc.html",
+                controller : 'EditDocCtrl',
+                controllerAs : 'ctrl',
+                params: {id: null}
             })
 
 

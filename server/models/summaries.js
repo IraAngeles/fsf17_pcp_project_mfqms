@@ -8,7 +8,10 @@ module.exports = function(sequelize, DataTypes) {
       primaryKey: true
     },
     create_at: {
-      type: DataTypes.DATE,
+      // type: DataTypes.DATE,
+      // allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
       allowNull: false
     },
     update_at: {
@@ -16,8 +19,9 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     },
     summary: {
-      type: "LONGBLOB",
-      allowNull: false
+      // type: "LONGBLOB",
+      type: DataTypes.TEXT('long'),
+      allowNull: true
     },
     ss_document_id: {
       type: DataTypes.INTEGER(11),
@@ -29,5 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'summaries'
+    , timestamps: false
+    , freezeTableName: true
   });
 };
