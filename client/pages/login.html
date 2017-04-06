@@ -25,11 +25,14 @@
         <form name="loginForm" ng-submit="ctrl.login()" novalidate autocomplete="off">
             <div class="form-group input-field col s6" ng-class="{ 'has-error': loginForm.email.$touched && loginForm.email.$invalid }">
                 <input type="email" class="form-control" ng-model="ctrl.user.email"
-                       placeholder="internet address @ IBM.com" name="email" required>
+                       placeholder="internet address @ IBM.com" name="email" 
+                       ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@+[A-Za-z]{2}.ibm\.com$/"
+                       required>
                 <div class="help-block"
                      ng-messages="loginForm.email.$error" ng-if="loginForm.email.$touched">
                     <span class="help-inline" ng-message="required">Email Address is mandatory</span>
                     <span class="help-inline" ng-message="email">Email Address is invalid</span>
+                    <span class="help-inline" ng-message="pattern">Email Address must be a valid IBM email address</span>
                 </div>
             </div>
             <div class="form-group input-field col s6" ng-class="{ 'has-error': loginForm.password.$touched && loginForm.password.$invalid}">
@@ -51,7 +54,7 @@
 
         <hr>
 
-        <p>Need an account? <a ui-sref="register">Sign-up</a></p>
+        <p>Need an account? <a ui-sref="register">Register here</a></p>
         <!--<p>Forgot your password ? <a ui-sref="ResetPassword">Reset</a></p>-->
 
     </div>

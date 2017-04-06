@@ -26,11 +26,14 @@
         <form name="registerForm" ng-submit="ctrl.register()" novalidate autocomplete="off">
             <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.emailAddress.$touched && registerForm.emailAddress.$invalid }">
                 <input type="email" class="form-control" ng-model="ctrl.emailAddress"
-                       name="emailAddress" placeholder="Email address" required>
+                       name="emailAddress" placeholder="Email address" 
+                       ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@+[A-Za-z]{2}.ibm\.com$/"
+                       required>
                 <div class="help-block"
                      ng-messages="registerForm.emailAddress.$error" ng-if="registerForm.emailAddress.$touched">
                     <span class="help-inline" ng-message="required">Email Address is mandatory</span>
                     <span class="help-inline" ng-message="email">Email Address is invalid</span>
+                    <span class="help-inline" ng-message="pattern">Email Address must be a valid IBM email address</span>
                 </div>
             </div>
             <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.firstName.$touched && registerForm.firstName.$invalid }">
