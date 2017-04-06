@@ -9,7 +9,10 @@ module.exports = function(sequelize, DataTypes) {
       autoIncrement: true
     },
     created_at: {
-      type: DataTypes.DATE,
+      // type: DataTypes.DATE,
+      // allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
       allowNull: false
     },
     updated_at: {
@@ -45,6 +48,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   }, {
-    tableName: 'owners'
+    tableName: 'owners',
+    timestamps: false,
+    freezeTableName: true
   });
 };

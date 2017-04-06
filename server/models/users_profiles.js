@@ -46,6 +46,6 @@ module.exports = function(sequelize, DataTypes) {
     ,createdAt: 'created_at'
     ,updatedAt: 'updated_at'    
     , freezeTableName: true
-    , sync : {force: true}      
+    // , sync : {force: true}      
   });
 };

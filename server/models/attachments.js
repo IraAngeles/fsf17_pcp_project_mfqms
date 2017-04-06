@@ -10,10 +10,13 @@ module.exports = function(sequelize, DataTypes) {
     },
     location: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     created_at: {
-      type: DataTypes.DATE,
+      // type: DataTypes.DATE,
+      // allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: DataTypes.literal('CURRENT_TIMESTAMP'),
       allowNull: false
     },
     updated_at: {
@@ -22,7 +25,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     summary_id: {
       type: DataTypes.INTEGER(11),
-      allowNull: true,
+      allowNull: false,
       references: {
         model: 'summaries',
         key: 'id'
@@ -30,5 +33,7 @@ module.exports = function(sequelize, DataTypes) {
     }
   }, {
     tableName: 'attachments'
+    , timestamps: false
+    , freezeTableName: true
   });
 };

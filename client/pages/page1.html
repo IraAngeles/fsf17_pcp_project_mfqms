@@ -51,6 +51,47 @@
 </nav>
 
 
-    <h1>{{ctrl.header}}</h1>
+    <!--<h1>{{ctrl.header}}</h1>-->
+
+  <div>
+    <button type="submit" class="btn btn-success" ng-click="ctrl.createDoc()">Create Document</button>
+    <input type="text" class="form-control" placeholder="Filter" ng-model="ctrl.searchFilter">
+  </div>
+
+  <div class="container-fluid">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Document #</th>
+          <th>Title</th>
+          <th>Opened Date</th>
+          <th>Owning Org</th>
+          <th>Brand</th>
+          <th>Status</th>
+          <th>Last Update</th>
+        </tr>
+      </thead> 
+      <tbody>
+        <tr ng-repeat="docs in ctrl.documents | filter:ctrl.searchFilter | orderBy:'-opened_date' track by $index ">
+          <td>{{docs.document_number}}</td>
+          <td>{{docs.title}}</td>
+          <td>{{docs.opened_date | date : "yyyy-MM-dd HH:mmZ"}}</td>
+          <td>{{docs.owner}}</td>
+          <td>{{docs.brand}}</td>
+          <td>{{docs.status}}</td>
+          <td>{{docs.last_update}}</td>
+          <td><button type="button" class="btn btn-info" ng-click="ctrl.viewdocId(docs.id)">
+              <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
+              </button>
+          </td>
+          <td><button type="button" class="btn btn-success" ng-click="ctrl.editdocId(docs.id)">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+              </button>
+          </td>
+        </tr>
+      </tbody>      
+    </table>
+  </div>
+
 
 </div>

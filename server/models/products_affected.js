@@ -48,18 +48,18 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.DATE,
       allowNull: true
     },
-    // ss_document_id: {
-    //   type: DataTypes.INTEGER(11),
-    //   allowNull: true,
-    //   references: {
-    //     model: 'documents',
-    //     key: 'id'
-    //   }
-    // }
+    ss_document_id: {
+      type: DataTypes.INTEGER(11),
+      allowNull: true,
+      references: {
+        model: 'documents',
+        key: 'id'
+      }
+    }
   }, {
     tableName: 'products_affected'
     ,timestamps: false
     , freezeTableName: true
-    , sync : {force: true}    
+    // , sync : {force: true}    
   });
 };

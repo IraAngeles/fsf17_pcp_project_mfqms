@@ -36,7 +36,8 @@
                 //     }
                 // },
                 controller: 'Page2Ctrl',
-                controllerAs: 'ctrl'
+                controllerAs: 'ctrl',
+                params: {id: null}
             })
             .state('summary',{
                 url : '/summary',
@@ -48,7 +49,8 @@
                 url : '/page3',
                 templateUrl: "pages/page3.html",
                 controller : 'Page3Ctrl',
-                controllerAs : 'ctrl'
+                controllerAs : 'ctrl',
+                params: {id: null}
             })
             .state('page4',{
                 url : '/page4',
@@ -82,7 +84,13 @@
                 controller : 'UserProfileCtrl',
                 controllerAs : 'ctrl'
             })
-
+            .state('editdoc',{
+                url : '/editdoc',
+                templateUrl: "pages/editdoc.html",
+                controller : 'EditDocCtrl',
+                controllerAs : 'ctrl',
+                params: {id: null}
+            })
             // .state('home',{
             //     url : '/home',
             //     templateUrl: "pages/home.html",

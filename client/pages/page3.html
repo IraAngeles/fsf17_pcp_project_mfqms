@@ -1,5 +1,264 @@
-<div>   
+<!--<div>   
     <h3>Page 3</h3>
     <h1>{{ctrl.header}}</h1>
+
+</div>-->
+
+<div>  
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <!-- Defines navigation bar button -->
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">IBM</a>
+        </div>
+
+        <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+
+        <!-- Collects nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="nav-item active">
+                    <a href="#!/page2"
+                       data-target="#page2"
+                       data-toggle="tab">
+                        Summary / Status
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!/page3"
+                       data-target="#page3"
+                       data-toggle="tab">
+                        Owners / Contacts
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#!/page4"
+                       data-target="#page4"
+                       data-toggle="tab">
+                        Products Affected
+                        <span class="sr-only"></span>
+                    </a>
+                </li>                
+            </ul>
+
+        </div> 
+        <!--/.navbar-collapse -->
+
+    </div><!-- /.container-fluid -->
+
+
+</nav>
+
+
+    <!--<h1>{{ctrl.header}}</h1>-->
+
+
+    <!--<form action="" ng-submit="ctrl.page1Submit()">
+
+        
+        <button type="button" class="btn btn-success">Submit</button>
+
+    </form>-->
+
+
+        <!--<ul class="nav nav-tabs">
+            <li role="presentation" class="active"><a href="#">Summary / Status</a></li>
+            <li role="presentation"><a href="#">Owners / Contacts</a></li>
+            <li role="presentation"><a href="#page3">Products Affected</a></li>
+        </ul>-->
+
+    <!--<ui-view></ui-view>-->
+<!--<div class="tab-content">
+    <div id="page3" >
+        <div ng=include="pages/page3.html"></div>
+
+    </div>
+
+</div>-->
+
+
+    <!--<h3>{{ctrl.message}}</h3>-->
+
+
+  <div class="container-fluid">
+    <div>
+      <form name="createdocForm" ng-submit="createdocForm.$valid && ctrl.uploadDoc();" novalidate="">
+
+        <div class="form-group"> 
+          <label for="title">Title</label>
+            <input id="title"
+                    class="form-control"
+                    name="title"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.title"/> 
+            <div class="validation"  data-ng-show="createdocForm.title.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.title.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Title is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="owner">Owner</label>
+            <input id="owner"
+                    class="form-control"
+                    name="owner"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.owner"/> 
+            <div class="validation"  data-ng-show="createdocForm.owner.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.owner.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Owner is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="status">Status</label>
+            <input id="status"
+                    class="form-control"
+                    name="status"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.status"/> 
+            <div class="validation"  data-ng-show="createdocForm.status.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.status.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Status is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="document_number">Document Number</label>
+            <input id="document_number"
+                    class="form-control"
+                    name="document_number"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.document_number"/> 
+            <div class="validation"  data-ng-show="createdocForm.document_number.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.document_number.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Document Number is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="problem_description">Problem Description</label>
+            <input id="problem_description"
+                    class="form-control"
+                    name="problem_description"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.problem_description"/> 
+            <div class="validation"  data-ng-show="createdocForm.problem_description.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.problem_description.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Problem Description is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="problem_status">Problem Status</label>
+            <input id="problem_status"
+                    class="form-control"
+                    name="problem_status"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.problem_status"/> 
+            <div class="validation"  data-ng-show="createdocForm.problem_status.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.problem_status.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Problem Status is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="attr">Attribute</label>
+            <input id="attr"
+                    class="form-control"
+                    name="attr"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.attr"/> 
+            <div class="validation"  data-ng-show="createdocForm.attr.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.attr.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Attribute is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="brand">Brand</label>
+            <input id="brand"
+                    class="form-control"
+                    name="brand"
+                    type="text"
+                    required
+                    ng-model="ctrl.doc.brand"/> 
+            <div class="validation"  data-ng-show="createdocForm.brand.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.brand.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Brand is required.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group"> 
+          <label for="field_impact">Field Impact</label>
+            <input id="field_impact"
+                    class="form-control"
+                    name="field_impact"
+                    type="number"
+                    required
+                    ng-model="ctrl.doc.field_impact"/> 
+            <div class="validation"  data-ng-show="createdocForm.field_impact.$touched || createdocForm.$submitted">
+                <div data-ng-show="createdocForm.field_impact.$error.required">
+                    <span class="glyphicon glyphicon-alert"></span>
+                    Field Impact is required and must be numeric.
+                </div>
+            </div>       
+        </div>
+
+        <div class="form-group">
+
+          <input id="submit"
+                  name="submit"
+                  type="submit"
+                  class="btn btn-success"/>
+        </div>
+
+        <div ng-show="ctrl.showsuccess">
+            <h2>Document created.</h2>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
 
 </div>
