@@ -4,7 +4,7 @@
 
 </div>-->
 
-<div>  
+<div class="container">  
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -96,8 +96,8 @@
     <!--<h3>{{ctrl.message}}</h3>-->
 
 
-  <div class="container-fluid">
-    <div>
+  <!--<div class="container-fluid">-->
+    <div  class="col-sm-6 col-sm-offset-2"  >
       <form name="createdocForm" ng-submit="createdocForm.$valid && ctrl.uploadDoc();" novalidate="">
 
         <div class="form-group"> 
@@ -166,7 +166,7 @@
 
         <div class="form-group"> 
           <label for="problem_description">Problem Description</label>
-            <input id="problem_description"
+            <textarea id="problem_description"
                     class="form-control"
                     name="problem_description"
                     type="text"
@@ -258,7 +258,7 @@
 
       </form>
     </div>
-  </div>
+  <!--</div>-->
 
 
 </div>

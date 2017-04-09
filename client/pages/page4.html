@@ -17,9 +17,9 @@
 
         <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+                <input type="text" class="form-control" placeholder="Search" ng-model="ctrl.searchFilter">
             </div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <!--<button type="submit" class="btn btn-default">Submit</button>-->
         </form>
 
         <!-- Collects nav links, forms, and other content for toggling -->
@@ -75,7 +75,7 @@
         </thead>
 
         <tbody>
-            <tr ng-repeat="i in ctrl.searchResults" >
+            <tr ng-repeat="i in ctrl.searchResults | filter:ctrl.searchFilter" >
                 <td>
                     <span ng-hide="editMode">{{i.part_number}}</span>
                     <input type="text" class ="form-control" ng-show="editMode"  required ng-model="i.part_number" />
