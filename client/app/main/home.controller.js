@@ -22,6 +22,7 @@
                 .logoutApp()
                 .then(function(){
                     deferred.resolve();
+                    $state.reload();
                     $state.go("login");
                 })
                 .catch(function(){

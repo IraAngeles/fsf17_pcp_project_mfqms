@@ -1,16 +1,16 @@
 (function(){
     angular
         .module("MyApp")
-        .controller("RegisterCtrl",RegisterCtrl);
+        .controller("AddUserCtrl",AddUserCtrl);
 
-    RegisterCtrl.$inject = [ "$sanitize", "$state", "AuthFactory", "Flash"];
+    AddUserCtrl.$inject = [ "$sanitize", "$state", "AuthFactory", "Flash"];
 
-    function RegisterCtrl ($sanitize,$state, AuthFactory, Flash){
+    function AddUserCtrl ($sanitize,$state, AuthFactory, Flash){
         var vm = this;
 
         vm.user = {};
         vm.appname = "Manufacturing and Field Quality Management System";
-        vm.heading = "Registration";
+        vm.heading = "Add User";
         vm.registermsg = true;
 
         vm.emailAddress = "";
@@ -23,7 +23,7 @@
         vm.register = register;
         vm.cancel = cancel;
 
-        console.log("Register Controller");
+        console.log("Add user Controller");
 
         function register(){
             vm.user = {
@@ -47,7 +47,7 @@
 
 
         function cancel(){
-            $state.go("login");
+            $state.go("home");
 
 
         };

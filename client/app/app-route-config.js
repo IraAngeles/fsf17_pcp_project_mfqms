@@ -22,14 +22,14 @@
                 access: {restricted: false}
             })
             .state('page1',{
-                url : '/page1',
+                url : '/doclist',
                 templateUrl: "pages/page1.html",
                 controller : 'Page1Ctrl',
                 controllerAs : 'ctrl',
                 access: {restricted: true}
             })
             .state("page2", {
-                url: "/page2",
+                url: "/document",
                 templateUrl:  "pages/page2.html",
                 controller: 'Page2Ctrl',
                 controllerAs: 'ctrl',
@@ -44,7 +44,7 @@
                 access: {restricted: true}
             })            
             .state('page3',{
-                url : '/page3',
+                url : '/owner',
                 templateUrl: "pages/page3.html",
                 controller : 'Page3Ctrl',
                 controllerAs : 'ctrl',
@@ -52,14 +52,14 @@
                 params: {id: null}
             })
             .state('page4',{
-                url : '/page4',
+                url : '/productsaffected',
                 templateUrl: "pages/page4.html",
                 controller : 'Page4Ctrl',
                 controllerAs : 'ctrl',
                 access: {restricted: true}
             })
             .state('page5',{
-                url : '/page5',
+                url : '/productselect',
                 templateUrl: "pages/page5.html",
                 controller : 'Page5Ctrl',
                 controllerAs : 'ctrl',
@@ -79,12 +79,20 @@
                 controllerAs : 'ctrl',
                 access: {restricted: true}
             })
+            .state('adduser',{
+                url : '/adduser',
+                templateUrl: "pages/adduser.html",
+                access: {restricted: false},                
+                controller : 'AddUserCtrl',
+                controllerAs : 'ctrl'
+            })            
             .state('editdoc',{
                 url : '/editdoc',
                 templateUrl: "pages/editdoc.html",
                 controller : 'EditDocCtrl',
                 controllerAs : 'ctrl',
-                params: {id: null}
+                params: {id: null},
+                access: {restricted: true}                  
             })
 
 
