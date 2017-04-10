@@ -82,7 +82,7 @@
             .state('adduser',{
                 url : '/adduser',
                 templateUrl: "pages/adduser.html",
-                access: {restricted: false},                
+                access: {restricted: true},                
                 controller : 'AddUserCtrl',
                 controllerAs : 'ctrl'
             })            
@@ -94,7 +94,13 @@
                 params: {id: null},
                 access: {restricted: true}                  
             })
-
+            .state('pivottable',{
+                url : '/pivottable',
+                templateUrl: "pages/pivottable.html",
+                controller : 'PivotTableCtrl',
+                controllerAs : 'ctrl',
+                access: {restricted: true}                   
+            })
 
          $urlRouterProvider.otherwise("/login");
     

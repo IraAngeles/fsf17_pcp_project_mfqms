@@ -13,7 +13,7 @@
 
         vm.header = "Select Products";
         vm.searchResults = [];
-
+        vm.message = "";
 
         vm.listProducts = listProducts;
         vm.addProduct = addProduct;
@@ -51,6 +51,7 @@
                     fru_part_number : object.fru_part_number
                 })
                 .then(function(){
+                    vm.message = "Part number: " + object.part_number + " added."
                     console.log("created");
                 })
                 .catch(function(err){
