@@ -86,7 +86,12 @@
                 controllerAs : 'ctrl',
                 params: {id: null}
             })
-
+            .state('pivottable',{
+                url : '/pivottable',
+                templateUrl: "pages/pivottable.html",
+                controller : 'PivotTableCtrl',
+                controllerAs : 'ctrl'
+            })
 
          $urlRouterProvider.otherwise("/login");
     

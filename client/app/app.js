@@ -4,6 +4,7 @@
             "ui.router",
             "ngFlash",
             "ngSanitize",
-            "ngMessages"
+            "ngMessages",
+            "nvd3"
             ]);
 })();

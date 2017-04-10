@@ -11,7 +11,7 @@ insertData = function (UsersProfiles, Documents, ProductsAffected, Owners, Summa
   UsersProfiles
   .bulkCreate([
     {"id":1,"first_name":"Isaias","last_name":"Angeles","email":"isaias@sg.ibm.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control:'Admin'},
-    {"id":2,"first_name":"Reynaldo","last_name":"Corral","email":"reiolicor@gmail.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control:'Reader'},
+    {"id":2,"first_name":"Reynaldo","last_name":"Corral","email":"corralro@sg.ibm.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control:'Admin'},
     {"id":3,"first_name":"Paul","last_name":"Zulpa","email":"pzulpa@gmail.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control:'Owner'},
     {"id":4,"first_name":"Jeff","last_name":"Komatsu","email":"jkomatsu@gmail.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control: null},
     {"id":5,"first_name":"Xue","last_name":"Feng","email":"xf@gmail.com","password":"Abcd!234","status":'Active', approval_token: null, reset_token: null, access_control:null},

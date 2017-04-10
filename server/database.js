@@ -2,8 +2,8 @@ var Sequelize = require("sequelize");
 var config = require("./config");
 
 const MYSQL_USERNAME = 'root';
-const MYSQL_PASSWORD = 'abcd1234';  // ira login
-// const MYSQL_PASSWORD = 're1nald0';  // Reiz login
+// const MYSQL_PASSWORD = 'abcd1234';  // ira login
+const MYSQL_PASSWORD = 're1nald0';  // Reiz login
 
 var database = new Sequelize(
 'ssdb',

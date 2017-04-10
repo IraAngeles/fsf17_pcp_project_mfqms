@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="assets/css/index.css">
     <link rel="icon" href="" type="image/x-icon">
-    <style>.active { color: red; font-weight: bold; }</style>    
+    <!--needed by pivottable-->
+    <link rel="stylesheet" href="bower_components/pivottable/dist/pivot.css">
+    <style>.active { color: red; font-weight: bold; }</style>   
+    <!--needed by angular d3 -->
+    <link rel="stylesheet" href="bower_components/nvd3/build/nv.d3.css">
 
 </head>
 <body>
@@ -85,7 +89,13 @@
 <script type="text/javascript" src="/bower_components/angular-messages/angular-messages.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-flash-alert/dist/angular-flash.min.js"></script>
 <script type="text/javascript" src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-
+<!--needed by pivottable-->
+<script type="text/javascript" src="/bower_components/pivottable/dist/pivot.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+<!--needed by angular d3 -->
+<script src="bower_components/d3/d3.js"></script>
+<script src="bower_components/nvd3/build/nv.d3.js"></script>
+<script src="bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
 
 <script src="app/app.js"></script>
 <script src="app/app-route-config.js"></script>
@@ -108,5 +118,6 @@
 <script src="app/main/summary.controller.js"></script>
 <script src="app/main/user_profile.controller.js"></script>
 <script src="app/main/edit.doc.controller.js"></script>
+<script src="app/main/pivottable.controller.js"></script>
 
 </html>
