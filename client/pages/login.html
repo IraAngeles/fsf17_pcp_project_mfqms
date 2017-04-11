@@ -40,7 +40,8 @@
                        name="password" placeholder="Password" 
                        minlength="8"
                        ng-pattern="/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/"
-                       required>
+                       required
+                       autocomplete="off" >
                 <div class="help-block"
                      ng-messages="loginForm.password.$error" ng-if="loginForm.password.$touched">
                     <span class="help-inline" ng-message="required">Password is mandatory.</span>
