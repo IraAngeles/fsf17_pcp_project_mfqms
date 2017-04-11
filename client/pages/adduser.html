@@ -26,7 +26,7 @@
         <form name="registerForm" ng-submit="ctrl.register()" novalidate autocomplete="off">
             <div class="form-group input-field col s6" ng-class="{ 'has-error': registerForm.emailAddress.$touched && registerForm.emailAddress.$invalid }">
                 <input type="email" class="form-control" ng-model="ctrl.emailAddress"
-                       name="emailAddress" placeholder="Email address" 
+                       name="emailAddress" placeholder="internet address @ IBM.com" 
                        ng-pattern="/^[a-z0-9!#$%&'*+/=?^_`{|}~.-]+@+[A-Za-z]{2}.ibm\.com$/"
                        required>
                 <div class="help-block"

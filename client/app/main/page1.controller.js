@@ -47,7 +47,7 @@
 
       function createDoc() {
         // console.log('here!')
-        $state.go('page3');
+        $state.go('createdoc');
       };
 
       vm.viewdocId = function(id) {

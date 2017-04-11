@@ -66,7 +66,7 @@
                 <td>{{i.fru_part_number}}</td>
                 <td>
                     <div align="right">
-                    <button  ng-hide="editMode" type="button" class="btn btn-success" ng-click="ctrl.addProduct(i)" >
+                    <button  ng-hide="added" type="button" class="btn btn-success" ng-click="added = true; ctrl.addProduct(i)" >
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                     </button>
                 </div>                     

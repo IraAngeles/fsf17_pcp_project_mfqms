@@ -4,9 +4,9 @@
         .module("MyApp")
         .controller("Page5Ctrl",Page5Ctrl);
 
-    Page5Ctrl.$inject = ['$window','MyService'];
+    Page5Ctrl.$inject = ['$window', '$state','MyService'];
 
-    function Page5Ctrl ($window,MyService){
+    function Page5Ctrl ($window,$state,MyService){
         var vm = this;
         
         console.log("Page 5 Controller");
@@ -17,6 +17,7 @@
 
         vm.listProducts = listProducts;
         vm.addProduct = addProduct;
+
 
         listProducts();
 

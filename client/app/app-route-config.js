@@ -48,8 +48,7 @@
                 templateUrl: "pages/page3.html",
                 controller : 'Page3Ctrl',
                 controllerAs : 'ctrl',
-                access: {restricted: true},
-                params: {id: null}
+                access: {restricted: true}
             })
             .state('page4',{
                 url : '/productsaffected',
@@ -100,6 +99,14 @@
                 controller : 'PivotTableCtrl',
                 controllerAs : 'ctrl',
                 access: {restricted: true}                   
+            })
+            .state('createdoc',{
+                url : '/createdoc',
+                templateUrl: "pages/createdoc.html",
+                controller : 'CreateDocCtrl',
+                controllerAs : 'ctrl',
+                access: {restricted: true},
+                params: {id: null}
             })
 
          $urlRouterProvider.otherwise("/login");
