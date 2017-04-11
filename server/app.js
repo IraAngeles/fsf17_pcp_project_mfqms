@@ -45,13 +45,13 @@ app.use('/bower_components', express.static( path.join(__dirname,'/../bower_comp
 
 
 
-// app.use(function (req, res) {
-//     res.status(404).sendFile(path.join(MSG_FOLDER + "/404.html"));
-// });
+app.use(function (req, res) {
+    res.status(404).sendFile(path.join(MSG_FOLDER + "/404.html"));
+});
 
-// app.use(function (err, req, res, next) {
-//     res.status(501).sendFile(path.join(MSG_FOLDER + '/501.html'));
-// });
+app.use(function (err, req, res, next) {
+    res.status(501).sendFile(path.join(MSG_FOLDER + '/501.html'));
+});
 
 
 app.listen(NODE_PORT, function () {
