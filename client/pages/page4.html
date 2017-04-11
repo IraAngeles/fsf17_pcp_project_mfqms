@@ -15,45 +15,39 @@
             <a class="navbar-brand" href="/#!/home">IBM</a>
         </div>
 
-        <form class="navbar-form navbar-right" role="search">
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search" ng-model="ctrl.searchFilter">
-            </div>
-            <!--<button type="submit" class="btn btn-default">Submit</button>-->
-        </form>
-
         <!-- Collects nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <p class="navbar-text">{{ctrl.header}}</p>
-                    <!--<a>{{ctrl.header}}</a>-->
-                    <!--<a href="#!/page2"
-                       data-target="#page2"
-                       data-toggle="tab">-->
-                        
-                        <!--<span class="sr-only"></span>-->
-                    <!--</a>-->
-                </li>
-                <li class="nav-item ">
-                    <a href="#!/document"
-                       data-target="#page2"
-                       data-toggle="tab">
-                        Back
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!/productselect"
-                       data-target="#page5"
-                       data-toggle="tab">
-                       Select Products
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
+                <ul class="breadcrumb list-inline"> 
+                    <li><a href="#!/document">Document</a></li>
+                    <li><a href="#!/summary">Summary & Status</a></li>
+                    <li><a href="#!/owner">Owners & Contacts</a></li>
+                    <li  class="active">Products Affected</li>                
+                </ul>
+            </ul>
+
+
+            <div class="nav navbar-nav  navbar-right" >
+
+                <a class="btn btn-default breadcrumb" href="#!/productselect">Select Products</a>
+
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" ng-model="ctrl.searchFilter">
+                    </div>
+                </form>
+            </div>
+
 
 
         </div> 
+
+
+
+
+
+
+
         <!--/.navbar-collapse -->
 
     </div><!-- /.container-fluid -->

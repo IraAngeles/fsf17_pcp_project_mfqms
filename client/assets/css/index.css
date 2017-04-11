@@ -82,3 +82,13 @@ button.navbar-btn{
 .thank-you-page{
     margin-top: 100px;
 }
+
+.nav .breadcrumb {
+    margin: 0 7px;
+}
+@media (min-width: 768px) {
+    .nav .breadcrumb {
+        float: left;
+        margin: 7px 10px;
+    }
+}

@@ -25,33 +25,13 @@
         <!-- Collects nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li>
-                     <p class="navbar-text">{{ctrl.header}}</p>
-                </li>
-                <li class="nav-item">
-                    <a href="#!/summary"
-                       data-target="#summary"
-                       data-toggle="tab">
-                        Summary / Status
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!/owner"
-                       data-target="#page3"
-                       data-toggle="tab">
-                        Owners / Contacts
-                        <span class="sr-only"></span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#!/productsaffected"
-                       data-target="#page4"
-                       data-toggle="tab">
-                        Products Affected
-                        <span class="sr-only"></span>
-                    </a>
-                </li>                
+                <ul class="breadcrumb list-inline"> 
+                    <li> <a href="#!/doclist">Document List</a></li>
+                    <li class="active">Document</li>
+                    <li> <a href="#!/summary">Summary & Status</a></li>
+                    <li><a href="#!/owner">Owners & Contacts</a></li>
+                    <li><a href="#!/productsaffected">Products Affected</a></li>                
+                </ul>
             </ul>
 
         </div> 
