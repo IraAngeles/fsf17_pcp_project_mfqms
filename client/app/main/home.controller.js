@@ -73,7 +73,7 @@
                 y: function(d){return d.value + (1e-10);},
                 showValues: true,
                 valueFormat: function(d){
-                    return d3.format(',.4f')(d);
+                    return d3.format(',.0f')(d);                  
                 },
                 duration: 500,
                 xAxis: {
