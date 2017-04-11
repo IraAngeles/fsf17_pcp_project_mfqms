@@ -60,6 +60,10 @@ button.navbar-btn{
 
 }
 
+.bar-background {
+    background-color: gray;
+}
+
 .registration-page h1 {
     text-align: center;
     text-transform: uppercase;
